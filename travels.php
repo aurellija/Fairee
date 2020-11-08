@@ -13,8 +13,8 @@ $kiek = $rez -> num_rows;
 <head>
     <meta charset="UTF-8">
     <title>Keliones</title>
-    <link rel="stylesheet" href="source/stylesheets/style1.css">
-    <link rel="stylesheet" href="source/stylesheets/carousele.css">
+    <link rel="stylesheet" href="src/css/style1.css">
+    <link rel="stylesheet" href="src/css/carousele.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
 </head>
 <style>
