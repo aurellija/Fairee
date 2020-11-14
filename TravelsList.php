@@ -6,7 +6,7 @@
     <title>Keliones</title>
     <link rel="stylesheet" href="src/css/style1.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
-
+    
 </head>
 
 <body>
