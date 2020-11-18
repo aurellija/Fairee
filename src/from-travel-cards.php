@@ -1,5 +1,5 @@
 <?php
-include 'php/mydb.php';
+include 'php/db.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ include 'php/mydb.php';
 
     <div class="container">
         <div class="col blokas">
-            <?php include 'php/fromcards.php';?>
+            <?php include 'php/carousel.inc.php';?>
         </div>
         <a class="carousel-control-prev" href="#car">
         <span class="carousel-control-prev-icon"></span>

@@ -4,7 +4,7 @@
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 $nr=$_GET['kuris'];
-                $rez = $mysqli -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto, Aprasymas FROM all_keliones');
+                $rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto, Aprasymas FROM all_keliones');
                 $kiek = $rez -> num_rows;
                 
                     for($i=1; $i<=$kiek; $i++){
