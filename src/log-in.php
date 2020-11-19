@@ -28,13 +28,7 @@ include 'php/log-in.inc.php';
       <div class="col-md-8 blokas">
       <?php
         if (isset($_SESSION['Nr'])) {
-          echo '<form action="php/log-out.inc.php" method="POST">
-            <h4 class="mb-3 py-3 my-3">Atsijungti</h4>
-            <button class="btn btn-lg btn-block" type="submit" name="submit"> Atsijungti </button>
-          </form>
-          <div class="etc-login-form py-3">
-          <p>Turite klausimų? <a href="about.php">Skaitykite čia</a></p>
-        </div>';
+        
         }
           else {
             echo

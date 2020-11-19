@@ -130,10 +130,6 @@ include 'php/sign-up.inc.php';
           echo "<h5>Neteisingas el. paštas</h5>";
           exit();
       }
-      elseif ($check == "success"){
-          echo "<h5>Sėkmingai užsiregistravote. Prisijunkite <a href='log-in.php'> čia </a> </h5>";
-          exit();
-      }
   }
 ?>
 

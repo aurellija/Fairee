@@ -14,13 +14,26 @@
 <?php 
 session_start();
 include_once 'php/nav.inc.php'; 
+
+if (!isset($_GET['signup'])){
+    $hooray="";
+ 
+}
+elseif ($_GET['signup'] == "success"){
+    $hooray="<h5>Sėkmingai užsiregistravote. Galite prisijungti <a href='log-in.php'> čia </a> </h5>";
+    
+}
 ?>
 
 <body>
     <div class="container">
 
         <div class="row justify-content-center">
-            <div class="col-md blokas">Pagrindinis</div>
+            <div class="col-md blokas">
+                <?php
+                echo $hooray;
+                ?>
+            </div>
         </div>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">

@@ -49,7 +49,7 @@ if (isset($_POST['submit'])){
                     $hashpass, $bdate);
                     mysqli_stmt_execute($stmt);
                 }
-                header("Location: ../src/sign-up.php?signup=success");
+                header("Location: ../src/index.php?signup=success");
                 exit();
             }
         }

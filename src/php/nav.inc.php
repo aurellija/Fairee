@@ -21,7 +21,7 @@
                         <a class="nav-link" href="profile.php">Profilis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.php">Atsijungti</a>
+                        <a class="nav-link" href="../src/log-out.php" >Atsijungti</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">Apie</a>
