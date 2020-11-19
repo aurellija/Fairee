@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,35 +11,16 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 
+<?php 
+session_start();
+include_once 'php/nav.inc.php'; 
+?>
+
 <body>
-    <nav class="navbar navbar-expand-sm navbaras">
-        <a class="navbar-brand" href="#"><img src="assets/fairee-logo.svg" width="60" height="60"
-                alt=""></a>
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profilis</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Atsijungti</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">Apie</a>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
-
     <div class="container">
 
         <div class="row justify-content-center">
-            <div class="col-md blokas">Pagrindinis prisijungus</div>
+            <div class="col-md blokas">Pagrindinis</div>
         </div>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
