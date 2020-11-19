@@ -1,6 +1,6 @@
 <?php
-include 'php/mydb.php';
-$rez = $mysqli -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM all_keliones');
+include 'php/db.inc.php';
+$rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM all_keliones');
 $kiek = $rez -> num_rows;
 ?>
 <!doctype html>
@@ -50,7 +50,7 @@ $kiek = $rez -> num_rows;
 
     <div class="container">
         <div class="col blokas">
-            <?php include 'php/cards.php' ?>
+            <?php include 'php/cards.inc.php' ?>
         </div>
 
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">

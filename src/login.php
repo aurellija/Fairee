@@ -15,7 +15,7 @@
 <body>
 
   <nav class="navbar navbar-expand-sm navbaras">
-    <a class="navbar-brand" href="../index.html"><img src="assets/fairee-logo.svg" alt=""></a>
+    <a class="navbar-brand" href="../index.php"><img src="assets/fairee-logo.svg" alt=""></a>
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -34,12 +34,12 @@
     </div>
   </nav>
 
-
   <div class="container">
     <div class="row">
       <div class="col"></div>
       <div class="col-md-8 blokas">
         <h4 class="mb-3 py-3 my-3">Prisijungimas</h4>
+        
         <form class="needs-validation" novalidate>
 
           <div class=" mb-3 tekstas">
@@ -72,7 +72,7 @@
           <button class="btn btn-lg btn-block" type="submit">Prisijungti</button>
 
           <div class="etc-login-form py-3">
-            <p>Naujas vartotojas? <a href="signup.html">Registruotis</a></p>
+            <p>Naujas vartotojas? <a href="sign-up.php">Registruotis</a></p>
           </div>
 
         </form>
