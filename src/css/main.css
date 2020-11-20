@@ -26,7 +26,7 @@ body {
   padding-bottom: 20px;
 }
 
-h2, h4{
+h1, h2, h4{
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -75,7 +75,13 @@ html {
 	border-style: solid;
 	border-color: #BCE7FF;
 	border-radius: 5px;
-	margin: 20px;
+	margin-top: 20px;
+}
+.custom-file-input ~ .custom-file-label::after {
+    content: "Ieškoti";
+	background-color:#BCE7FF;
+	color:#232F5A;
+	font-family: 'Poppins', sans-serif;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -84,6 +90,56 @@ html {
 .custom-toggler.navbar-toggler { 
     border-color: #F7F9FB; 
 } 
+
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+
+.home .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.home .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+
+
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+}
+
+
+
+
+
+
 
 @media (min-width: 768px) {
   html {
