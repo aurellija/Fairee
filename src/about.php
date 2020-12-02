@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Apie</title>
+    <title>Fairee | Apie</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
