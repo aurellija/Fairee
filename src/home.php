@@ -28,7 +28,7 @@
                     <a class="nav-link" href="mytravels.html">Mano kelionės</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profilis</a>
+                    <a class="nav-link" href="profile.php">Profilis</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../index.html">Atsijungti</a>
@@ -39,42 +39,59 @@
             </ul>
         </div>
     </nav>
-   
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
+    <div class="container blokas carhome">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
+
     <div class="carousel-inner">
+ 
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Figma</h1>
-            <p>Kelionių organizavimo sistema jūsų kolektyvui</p>
-          </div>
+        <div class="container-car">
+          <img src="assets/img/1.jpg">
+              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+              <div class="container">
+                <div class="carousel-caption text-left">
+                  <h1>Fairee</h1>
+                  <p>Kelionių organizavimo sistema jūsų kolektyvui</p>
+                </div>
+              </div>
         </div>
       </div>
+
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Figma</h1>
-            <p>Kelionių organizavimo sistema jūsų kolektyvui</p>
+        <div class="container-car">
+        <img src="assets/img/2.jpg">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Fairee</h1>
+              <p>Planavimas taps dar lengvesnis</p>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Figma</h1>
-            <p>Kelionių organizavimo sistema jūsų kolektyvui</p>
+      <div class="container-car">
+      <img src="assets/img/3.jpg">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Fairee</h1>
+              <p>Kelionės – daug įdomesnės!</p>
+            </div>
           </div>
-        </div>
+          </div>
       </div>
+
+ 
+
     </div>
+
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -83,23 +100,24 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+</div>
   </div>
   <div class="container blokas home">
     <div class="row">
       <div class="col-lg-4">
         <img class="bd-placeholder-img" src="assets/map.svg" width="140" height="140" >
 		<h2>Kelionės</h2>
-		<p><a class="btn" href="#" role="button">Plačiau &raquo;</a><p>
+		<p><a class="btn" href="travel-cards.php" role="button">Plačiau &raquo;</a><p>
       </div>
       <div class="col-lg-4">
         <img class="bd-placeholder-img" src="assets/compass.svg" width="140" height="140" >
 		<h2>Mano kelionės</h2>
-		<p><a class="btn" href="#" role="button">Plačiau &raquo;</a><p>
+		<p><a class="btn" href="my-travels.php" role="button">Plačiau &raquo;</a><p>
       </div>
       <div class="col-lg-4">
         <img class="bd-placeholder-img" src="assets/user.svg" width="140" height="140" >
 		<h2>Profilis</h2>
-		<p><a class="btn" href="#" role="button">Plačiau &raquo;</a><p>
+		<p><a class="btn" href="profile.php" role="button">Plačiau &raquo;</a><p>
       </div>
     </div>
         

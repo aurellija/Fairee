@@ -35,6 +35,7 @@ if (isset($_POST['submit'])){
                 header("Location: ../src/sign-up.php?signup=email&fname=$fname&lname=$lname&bdate=$bdate");
                 exit();
             }
+
             else{
                 $rez = "INSERT INTO  vartotojai
                 (Vardas, Pavarde, Elpastas, Slaptazodis, G_data)

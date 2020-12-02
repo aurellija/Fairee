@@ -1,5 +1,5 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
-    <div class="carousel-inner row w-100 mx-auto">
+    <div class="carousel-inner row w-250 mx-auto">
         <?php
             include 'db.inc.php';
             $rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM all_keliones');

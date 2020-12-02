@@ -21,7 +21,7 @@ $kiek = $rez -> num_rows;
 ?>
 
     <div class="container">
-        <div class="col blokas">
+        <div class="col blokas travelcards">
             <?php include 'php/cards.inc.php' ?>
         </div>
 
