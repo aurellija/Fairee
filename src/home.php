@@ -11,7 +11,6 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
-
 <body>
     <nav class="navbar navbar-expand-sm navbaras">
         <a class="navbar-brand" href="#"><img src="assets/fairee-logo.svg" width="60" height="60"
@@ -20,7 +19,6 @@
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -41,9 +39,7 @@
             </ul>
         </div>
     </nav>
-
    
-
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -88,11 +84,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
-
-
   <div class="container blokas home">
-
     <div class="row">
       <div class="col-lg-4">
         <img class="bd-placeholder-img" src="assets/map.svg" width="140" height="140" >
@@ -110,7 +102,6 @@
 		<p><a class="btn" href="#" role="button">Plačiau &raquo;</a><p>
       </div>
     </div>
-
         
     </div>
 		<footer class="container my-5 pt-5 text-muted text-center text-small">
@@ -132,5 +123,4 @@
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
    
 </body>
-
 </html>

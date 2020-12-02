@@ -3,37 +3,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Kelionės</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+    <title>Pagrindinis</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/carousele.css">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
 <?php 
 session_start();
-include 'php/db.inc.php';
 include_once 'php/nav.inc.php'; 
-$rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM all_keliones');
-$kiek = $rez -> num_rows;
+
+if (!isset($_GET['signup'])){
+    $hooray="";
+ 
+}
+elseif ($_GET['signup'] == "success"){
+    $hooray="<h5>Sėkmingai užsiregistravote. Galite prisijungti <a href='log-in.php'> čia </a> </h5>";
+    
+}
 ?>
 
+<body>
     <div class="container">
-        <div class="col blokas">
-            <?php include 'php/cards.inc.php' ?>
+
+        <div class="row justify-content-center">
+            <div class="col-md blokas">
+                <?php
+                echo $hooray;
+                ?>
+            </div>
         </div>
-
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
             <p class="mb-1">&copy; Fairee</p>
@@ -52,10 +53,8 @@ $kiek = $rez -> num_rows;
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
-    <script type="text/javascript" src="js/carousele.js"></script>
-   
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="form-validation.js"></script>
 </body>
 
 </html>

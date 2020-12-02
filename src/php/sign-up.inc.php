@@ -1,12 +1,15 @@
 <?php
 
 if (isset($_POST['submit'])){
-    include_once 'php/db.inc.php';
+    include_once 'db.inc.php';
 
     $fname= mysqli_real_escape_string($cnct, $_POST['fname']);
     $lname= mysqli_real_escape_string($cnct, $_POST['lname']);
     $email= mysqli_real_escape_string($cnct, $_POST['email']);
-    $pass= mysqli_real_escape_string($cnct, @md5($_POST['pass']));
+    $pass= mysqli_real_escape_string($cnct, $_POST['pass']);
+    $hashpass=password_hash($pass, PASSWORD_DEFAULT);
+    $rpass = mysqli_real_escape_string($cnct, $_POST['rpass']);
+    $hashrpass=password_hash($rpass, PASSWORD_DEFAULT);
     $bdate= mysqli_real_escape_string($cnct, $_POST['bdate']);
     
     if(empty($fname) || empty($lname) || empty($email) || empty($pass) || empty($bdate) ) {
@@ -16,12 +19,15 @@ if (isset($_POST['submit'])){
     else {
     
         if(!preg_match("/^[a-zA-Z]*$/", $fname)){
-            //header("Location: ../src/sign-up.php?signup=char");
             header("Location: ../src/sign-up.php?signup=fname&email=$email&lname=$lname&bdate=$bdate");
             exit();
         }
         elseif (!preg_match("/^[a-zA-Z]*$/", $lname)){
             header("Location: ../src/sign-up.php?signup=lname&email=$email&fname=$fname&bdate=$bdate");
+            exit();
+        }
+        elseif ($pass != $rpass){
+            header("Location: ../src/sign-up.php?signup=pass&email=$email&fname=$fname&lname=$lname&bdate=$bdate");
             exit();
         }
         else{
@@ -40,10 +46,10 @@ if (isset($_POST['submit'])){
                     echo "SQL error";
                 } else {
                     mysqli_stmt_bind_param($stmt, "sssss", $fname, $lname, $email,
-                    $pass, $bdate);
+                    $hashpass, $bdate);
                     mysqli_stmt_execute($stmt);
                 }
-                header("Location: ../src/sign-up.php?signup=success");
+                header("Location: ../src/index.php?signup=success");
                 exit();
             }
         }

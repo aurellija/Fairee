@@ -1,7 +1,3 @@
-<?php
-include 'php/db.inc.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,36 +12,13 @@ include 'php/db.inc.php';
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
+<?php 
+session_start();
+include 'php/db.inc.php';
+include_once 'php/nav.inc.php'; 
+?>
+
 <body>
-<nav class="navbar navbar-expand-sm navbaras">
-        <a class="navbar-brand" href="#"><img src="assets/fairee-logo.svg" width="60" height="60"
-                alt=""></a>
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="travel-cards.php">Kelionės</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="mytravels.html">Mano kelionės</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profilis</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Atsijungti</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">Apie</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container">
         <div class="col blokas">
             <?php include 'php/carousel.inc.php';?>

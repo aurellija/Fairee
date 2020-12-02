@@ -1,9 +1,5 @@
 <!doctype html>
 <html lang="en">
-<?php
-  include 'php/register.inc.php';
-?>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,34 +9,14 @@
   <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
-<style>
-  h5{
-    padding-left:25%;
-    color:white;
-  }
-</style>
+
+<?php 
+session_start();
+include_once 'php/nav.inc.php'; 
+include 'php/sign-up.inc.php';
+?>
+
 <body>
-
-  <nav class="navbar navbar-expand-sm navbaras">
-    <a class="navbar-brand" href="../index.php"><img src="assets/fairee-logo.svg" alt=""></a>
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="login.php">Prisijungti</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">Apie</a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
-
   <div class="container">
     <div class="row">
       <div class="col"></div>
@@ -120,7 +96,7 @@
           <button class="btn btn-lg btn-block" type="submit" name="submit">Registruotis</button>
 
           <div class="etc-login-form py-3">
-            <p>Jau turite prisijungimą? <a href="login.php">Prisijungti</a></p>
+            <p>Jau turite prisijungimą? <a href="log-in.php">Prisijungti</a></p>
           </div>
         </form>
       </div>
@@ -146,12 +122,12 @@
         echo "<h5>Neteisingai įvesta pavardė</h5>";
         exit();
       }
+      elseif ($check == "pass"){
+        echo "<h5>Slaptažodžiai nesutampa</h5>";
+        exit();
+      }
       elseif ($check == "email"){
           echo "<h5>Neteisingas el. paštas</h5>";
-          exit();
-      }
-      elseif ($check == "success"){
-          echo "<h5>Sėkmingai užsiregistravote. Prisijunkite <a href='login.php'> čia </a> </h5>";
           exit();
       }
   }

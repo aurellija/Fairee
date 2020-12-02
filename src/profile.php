@@ -13,33 +13,12 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbaras">
-    <a class="navbar-brand" href="../index.html"><img src="assets/fairee-logo.svg" alt=""></a>
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<?php 
+session_start();
+include_once 'php/nav.inc.php'; 
+?>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Kelionės</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mano kelionės</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profilis</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Atsijungti</a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
-
-  <div class="container blokas">
+  <div class="container blokas ml-auto mr-auto">
 
     <div class="row ml-auto">
       <div class="col-md-4 order-md-2 mb-4">
