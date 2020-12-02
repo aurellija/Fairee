@@ -10,6 +10,13 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
+<style>
+  h5{
+    padding-left:39%;
+    color:white;
+}
+</style>
+
 <?php 
 session_start();
 include_once 'php/nav.inc.php'; 
@@ -31,7 +38,7 @@ include 'php/sign-up.inc.php';
             '<div class=" mb-3 tekstas">
               <label for="firstName">Vardas</label>
               <input type="text" class="form-control" id="firstName" name="fname" 
-              placeholder="" value="'.$fname.'" required>
+              placeholder="Vardas iš didžiosios" value="'.$fname.'" required>
               <div class="invalid-feedback">
                 Prašome įvesti prisijungimo vardą.
               </div>
@@ -42,8 +49,8 @@ include 'php/sign-up.inc.php';
             echo
             '<div class=" mb-3 tekstas">
               <label for="lastName">Pavardė</label>
-              <input type="text" class="form-control" id="firstName" name="lname" 
-              placeholder="" value="'.$lname.'" required>
+              <input type="text" class="form-control" id="lastName" name="lname" 
+              placeholder="Pavardė iš didžiosios" value="'.$lname.'" required>
               <div class="invalid-feedback">
                 Prašome įvesti prisijungimo vardą.
               </div>
@@ -55,7 +62,7 @@ include 'php/sign-up.inc.php';
             '<div class="mb-3 tekstas">
               <label for="email">Elektroninis paštas</label>
               <input type="email" class="form-control" id="email" name="email" 
-              placeholder="vardas.pavarde@epastas.com" value="'.$email.'"
+              placeholder="pvz.: vardas.pavarde@gmail.com" value="'.$email.'"
                 required>
               <div class="invalid-feedback">
                 Prašome įvesti tinkamą elektroninio pašto adresą.
@@ -64,16 +71,19 @@ include 'php/sign-up.inc.php';
 
             echo
             '<div class="mb-3 tekstas">
-              <label for="email">Slaptažodis</label>
+              <label for="password">Slaptažodis</label>
               <input type="password" class="form-control" id="password" name="pass" 
-              placeholder="" value="" required>
+              placeholder="Privalomi: bent 8 simboliai, didžioji raidė, skaičius" value="" 
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required>
               <div class="invalid-feedback">
                 Prašome įvesti slaptažodį.
               </div>
             </div>
             <div class="mb-3 tekstas">
-              <label for="address">Pakartokite slaptažodį</label>
-              <input type="password" class="form-control" id="password_confirmation" name="rpass"  placeholder="" required>
+              <label for="password_confirmation">Pakartokite slaptažodį</label>
+              <input type="password" class="form-control" id="password_confirmation" name="rpass"
+              placeholder="Privalomi: bent 8 simboliai, didžioji raidė, skaičius" value="" 
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required>
               <div class="invalid-feedback">
                 Prašome pakartoti slaptažodį.
               </div>
