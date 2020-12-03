@@ -16,45 +16,42 @@ if (isset($_POST['submit'])){
         header("Location: ../src/sign-up.php?signup=empty");
         exit();
     }
-    else {
-    
-        if(!preg_match("/^[a-zA-Z]*$/", $fname)){
+    elseif(!preg_match("/^[A-Z][a-z]*$/", $fname)){
             header("Location: ../src/sign-up.php?signup=fname&email=$email&lname=$lname&bdate=$bdate");
             exit();
-        }
-        elseif (!preg_match("/^[a-zA-Z]*$/", $lname)){
-            header("Location: ../src/sign-up.php?signup=lname&email=$email&fname=$fname&bdate=$bdate");
-            exit();
-        }
-        elseif ($pass != $rpass){
-            header("Location: ../src/sign-up.php?signup=pass&email=$email&fname=$fname&lname=$lname&bdate=$bdate");
-            exit();
-        }
-        else{
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                header("Location: ../src/sign-up.php?signup=email&fname=$fname&lname=$lname&bdate=$bdate");
-                exit();
-            }
-
-            else{
-                $rez = "INSERT INTO  vartotojai
-                (Vardas, Pavarde, Elpastas, Slaptazodis, G_data)
-                VALUES (?,?,?,?,?);";
-
-                $stmt = mysqli_stmt_init($cnct);
-
-                if(!mysqli_stmt_prepare($stmt, $rez)){
-                    echo "SQL error";
-                } else {
-                    mysqli_stmt_bind_param($stmt, "sssss", $fname, $lname, $email,
-                    $hashpass, $bdate);
-                    mysqli_stmt_execute($stmt);
-                }
-                header("Location: ../src/index.php?signup=success");
-                exit();
-            }
-        }
     }
+    elseif (!preg_match("/^[A-Z][a-z]*$/", $lname)){
+        header("Location: ../src/sign-up.php?signup=lname&email=$email&fname=$fname&bdate=$bdate");
+        exit();
+    }
+    elseif ($pass != $rpass){
+        header("Location: ../src/sign-up.php?signup=pass&email=$email&fname=$fname&lname=$lname&bdate=$bdate");
+        exit();
+    }
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            header("Location: ../src/sign-up.php?signup=email&fname=$fname&lname=$lname&bdate=$bdate");
+            exit();
+    }
+
+    else{
+        $rez = "INSERT INTO  vartotojai
+        (Vardas, Pavarde, Elpastas, Slaptazodis, G_data)
+        VALUES (?,?,?,?,?);";
+
+        $stmt = mysqli_stmt_init($cnct);
+
+        if(!mysqli_stmt_prepare($stmt, $rez)){
+            echo "SQL error";
+        } else {
+            mysqli_stmt_bind_param($stmt, "sssss", $fname, $lname, $email,
+            $hashpass, $bdate);
+            mysqli_stmt_execute($stmt);
+            header("Location: ../src/index.php?signup=success");
+        }
+        
+        exit();
+    }
+
 }
 else {
    // echo "<h5>nieko</h5>";

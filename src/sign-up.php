@@ -27,7 +27,7 @@ include 'php/sign-up.inc.php';
   <div class="container">
     <div class="row">
       <div class="col"></div>
-      <div class="col-md-8 blokas">
+      <div class="col-md-7 blokas">
         <h4 class="mb-3 py-3 my-3">Registracija</h4>
         <form class="needs-validation" action="sign-up.php" method="POST">
         <?php

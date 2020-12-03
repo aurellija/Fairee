@@ -39,69 +39,68 @@
             </ul>
         </div>
     </nav>
-    <div class="container blokas carhome">
+<div class="container blokas carhome">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
 
     <div class="carousel-inner">
  
-      <div class="carousel-item active">
-        <div class="container-car">
-          <img src="assets/img/1.jpg">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-              <div class="container">
-                <div class="carousel-caption text-left">
-                  <h1>Fairee</h1>
-                  <p>Kelionių organizavimo sistema jūsų kolektyvui</p>
+        <div class="carousel-item active">
+          <div class="container-car">
+            <img src="assets/img/1.jpg">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                <div class="container">
+                  <div class="carousel-caption text-left">
+                    <h1>Fairee</h1>
+                    <p>Kelionių organizavimo sistema jūsų kolektyvui</p>
+                  </div>
                 </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="container-car">
+          <img src="assets/img/2.jpg">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Fairee</h1>
+                <p>Planavimas taps dar lengvesnis</p>
               </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="carousel-item">
+        <div class="carousel-item">
         <div class="container-car">
-        <img src="assets/img/2.jpg">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-          <div class="container">
-            <div class="carousel-caption text-left">
-              <h1>Fairee</h1>
-              <p>Planavimas taps dar lengvesnis</p>
+        <img src="assets/img/3.jpg">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Fairee</h1>
+                <p>Kelionės – daug įdomesnės!</p>
+              </div>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
-
-      <div class="carousel-item">
-      <div class="container-car">
-      <img src="assets/img/3.jpg">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-          <div class="container">
-            <div class="carousel-caption text-left">
-              <h1>Fairee</h1>
-              <p>Kelionės – daug įdomesnės!</p>
-            </div>
-          </div>
-          </div>
-      </div>
-
- 
 
     </div>
 
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
   </div>
+</div>
+
   <div class="container blokas home">
     <div class="row">
       <div class="col-lg-4">

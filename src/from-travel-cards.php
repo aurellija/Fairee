@@ -19,16 +19,12 @@ include_once 'php/nav.inc.php';
 ?>
 
 <body>
-    <div class="container">
-        <div class="col blokas">
+    <div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10 blokas">
             <?php include 'php/carousel.inc.php';?>
         </div>
-        <a class="carousel-control-prev" href="#car">
-        <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#car">
-            <span class="carousel-control-next-icon"></span>
-        </a>
+</div>
     </div>
 
     <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>

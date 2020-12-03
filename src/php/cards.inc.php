@@ -11,7 +11,7 @@
                         if($i>0) {$act="";}
                             echo 
                             '<div class="carousel-item col-md-4 ' .$act.'">
-                                <div class="card">
+                                <div class="card my-3">
                                 <h4 class="card-title">'.$y["Pavadinimas"].'</h4>
                                     <img class="card-img-top img-fluid" src="'.$y["Foto"].'"
                                         alt="Card image cap">
@@ -31,4 +31,12 @@
                 $cnct->close();
         ?>
     </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
 </div>
