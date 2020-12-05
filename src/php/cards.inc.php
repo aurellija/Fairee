@@ -12,13 +12,14 @@
                             echo 
                             '<div class="carousel-item col-md-4 ' .$act.'">
                                 <div class="card my-3">
-                                <h4 class="card-title">'.$y["Pavadinimas"].'</h4>
+                                    <h4 class="card-title">'.$y["Pavadinimas"].'</h4>
                                     <img class="card-img-top img-fluid" src="'.$y["Foto"].'"
                                         alt="Card image cap">
                                     <div class="card-body">
                                         <p>Registruotis iki: '. $y["Reg_iki"].'<br>
                                         Liko vietų: '. $y["Liko_vietu"].'<br>
-                                        <button type="button"><a href="from-travel-cards.php?kuris='.$y["Nr"].'">Plačiau</a></button>
+                                        <button class="btn btn-md mt-2 btn-block" type="submit" name="submit">
+                                        <a href="from-travel-cards.php?kuris='.$y["Nr"].'">Plačiau</a></button>
                                         </p>
                                     </div>
                                 </div>

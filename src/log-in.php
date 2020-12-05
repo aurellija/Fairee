@@ -28,7 +28,7 @@ include 'php/log-in.inc.php';
       <div class="col-md-7 blokas">
       <?php
         if (isset($_SESSION['Nr'])) {
-        
+          header("Location: ../index.php");
         }
           else {
             echo

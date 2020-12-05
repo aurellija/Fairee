@@ -26,6 +26,8 @@ session_start();
 include_once 'php/nav.inc.php';
 include_once 'php/profile.inc.php';
 
+if (isset($_SESSION['Nr'])) {
+
 echo
   '<div class="container blokas ml-auto mr-auto">
 
@@ -76,7 +78,11 @@ echo
           <button class="btn btn-lg btn-block" type="submit" name="submit">Išsaugoti</button>
         </form>
       </div>
-    </div>';
+    </div>';}
+
+    else {
+      header("Location: ../index.php");
+    }
 ?>
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; Fairee</p>

@@ -54,7 +54,9 @@ p,.tekstas{
 	font-family: 'Poppins', sans-serif;
 }
 
-
+.navbar {
+	z-index: 5;
+}
 .navbar-brand{
 	padding-left: 30px;
 }

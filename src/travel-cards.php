@@ -16,14 +16,13 @@
 session_start();
 include 'php/db.inc.php';
 include_once 'php/nav.inc.php'; 
-$rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM visos_keliones');
-$kiek = $rez -> num_rows;
-?>
-
-<div class="container-fluid">
+if (isset($_SESSION['Nr'])) {
+echo'
+    <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-10 blokas travelcards">
-            <?php include 'php/cards.inc.php' ?>
+        <div class="col-md-10 blokas travelcards">';
+            include 'php/cards.inc.php';
+echo'
         </div>
     </div>  
         <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -34,7 +33,13 @@ $kiek = $rez -> num_rows;
                 <li class="list-inline-item"><a href="#">Support</a></li>
             </ul>
         </footer>
-</div>
+</div>';
+}
+else{
+    header("Location: ../index.php");
+}
+
+?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

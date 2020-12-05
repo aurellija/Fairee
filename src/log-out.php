@@ -25,21 +25,27 @@ include_once 'php/nav.inc.php';
     <div class="row">
       <div class="col"></div>
       <div class="col-md-8 blokas">
-
-        <form action="php/log-out.inc.php" method="POST">
+  
+    <?php
+      if (isset($_SESSION['Nr'])) {
+        echo '
+          <form action="php/log-out.inc.php" method="POST">
             <h4 class="mb-3 py-3 my-3">Atsijungti</h4>
             <button class="btn btn-lg btn-block" type="submit" name="submit"> Atsijungti </button>
             </form>
             <div class="etc-login-form py-3">
             <p>Turite klausimų? <a href="about.php">Skaitykite čia</a></p>
             </div>
-        </form>
-  
+          </form>
+        ';
+      }
+      else {
+        header("Location: ../index.php");
+      }
+    ?>
       </div>
       <div class="col"></div>
-
  </div>
-
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; Fairee</p>

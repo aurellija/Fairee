@@ -1,6 +1,8 @@
+
 <div id="car" class="carousel slide" data-ride="carousel" data-interval="5000">
     <div class="carousel-inner">
         <?php
+        include 'php/db.inc.php';
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $nr=$_GET['kuris'];
         $rez = $cnct -> query('SELECT Nr, Pavadinimas, Data, Tipas, Organizatorius, Trukme, 
@@ -19,8 +21,7 @@
                                     <div class="col">
                                     <h6> Registruotis iki: '.$y2["Reg_iki"].'</h6> 
                                         <h6> Kelionės data: '.$y2["Data"].'</h6> 
-                                        <h6> Kelionės trukmė: '.$y2["Trukme"].' d.</h6> 
-                                        
+                                        <h6> Kelionės trukmė: '.$y2["Trukme"].' d.</h6>
                                     </div>
                                     <div class="col">
                                         <h6> Tipas: '.$y2["Tipas"].'</h6> 
@@ -34,7 +35,7 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-end">
-                                <button type="button"><a href="register.php">Registruotis</a></button>
+                                <button class="btn btn-md m-3 btn-block" type="submit" name="submit"><a href="register.php">Registruotis</a></button>
                                 </div>
                             </div>
                             <div class="col">

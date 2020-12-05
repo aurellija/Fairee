@@ -13,33 +13,12 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbaras">
-    <a class="navbar-brand" href="../index.html"><img src="assets/fairee-logo.svg" alt=""></a>
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="travel-cards.php">Kelionės</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="my-travels.php">Mano kelionės</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="profile.php">Profilis</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="log-out.php">Atsijungti</a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
 <?php
 session_start();
+include_once 'php/nav.inc.php'; 
+
+if (isset($_SESSION['Nr'])) {
 include_once 'php/create-travel.inc.php';
  echo
   '<div class="container blokas">
@@ -153,7 +132,10 @@ include_once 'php/create-travel.inc.php';
         
       </div>
     </div>
-    </form>';
+    </form>';}
+  else {
+    header("Location: ../index.php");
+  }
 ?>
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; Fairee</p>

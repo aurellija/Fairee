@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 					$_SESSION['bdate'] = $row['G_data'];
 					$_SESSION['phone'] = $row['Telefonas'];
 				
-					header("Location: ../src/index.php");
+					header("Location: ../index.php");
 					exit();
 				}
             } 

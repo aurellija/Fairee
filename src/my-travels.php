@@ -15,8 +15,6 @@
 session_start();
 include 'php/db.inc.php';
 include_once 'php/nav.inc.php'; 
-$rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM visos_keliones');
-$kiek = $rez -> num_rows;
 ?>
 
 <div class="container-fluid">
