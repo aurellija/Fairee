@@ -12,8 +12,6 @@ if (isset($_POST['submit'])) {
 
 	if (empty($nemail)) {
         echo '<h5> Įveskite el. pašto adresą </h5>';
-		//header("Location: ../src/profile.php?login=empty");
-		
     }
     else {
 		$rez = "UPDATE `vartotojai` SET `Vardas`='$nfname',
@@ -29,7 +27,7 @@ if (isset($_POST['submit'])) {
 	    else {
 			mysqli_stmt_bind_param($stmt, "i", $_SESSION['Nr']);
 			mysqli_stmt_execute($stmt);
-            echo '<h5> Duomenys pasikeitė ir formoje bus atnaujinti prisijungus iš naujo</h5>';
+            echo '<h5> Duomenys pasikeitė ir profilyje bus atnaujinti prisijungus iš naujo</h5>';
 		}
 	}
 

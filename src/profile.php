@@ -26,9 +26,8 @@ session_start();
 include_once 'php/nav.inc.php';
 include_once 'php/profile.inc.php';
 
-echo '
-
-  <div class="container blokas ml-auto mr-auto">
+echo
+  '<div class="container blokas ml-auto mr-auto">
 
     <div class="row ml-auto">
       <div class="col-md-4 order-md-2 mb-4">
@@ -45,32 +44,32 @@ echo '
           <div class="row">
             <div class="col-md-6 mb-3 tekstas">
               <label for="firstName">Vardas: '.$_SESSION['fname'].'</label>
-              <input type="text" class="form-control" id="firstName" name="fname" placeholder="" value="'.$_SESSION['fname'].'" required>
+              <input type="text" class="form-control" id="firstName" name="fname" placeholder="" 
+              value="'.$_SESSION['fname'].'" required>
 
             </div>
             <div class="col-md-6 mb-3 tekstas">
               <label for="lastName">Pavardė: '.$_SESSION['lname'].'</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" name="lname" required>
-
+              <input type="text" class="form-control" id="lastName" placeholder=""
+              value="'.$_SESSION['lname'].'" name="lname" required>
             </div>
           </div>
-
 
           <div class="mb-3 tekstas">
             <label for="email">Elektroninis paštas: '.$_SESSION['email'].'</label>
             <input type="email" class="form-control" id="email" value="" name="email" required>
-
           </div>
 
           <div class="mb-3 tekstas">
-            <label for="telephone">Telefono numeris</label>
-            <input type="text" class="form-control" id="telephone" placeholder="+370 " name="phone" required>
-
+            <label for="telephone">Telefono numeris: '.$_SESSION['phone'].'</label>
+            <input type="text" class="form-control" id="telephone" placeholder="+370 " 
+            name="phone" value="'.$_SESSION['phone'].'" required>
           </div>
+
           <div class="mb-3 tekstas">
             <label for="birthDate">Gimimo data: '.$_SESSION['bdate'].'</label>
-            <input type="date" id="birthDate" class="form-control" placeholder="" value="" name="bdate" required>
-
+            <input type="date" id="birthDate" class="form-control" placeholder="" 
+            value="'.$_SESSION['bdate'].'" name="bdate" required>
           </div>
 
           <hr class="mb-4">

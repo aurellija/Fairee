@@ -4,11 +4,11 @@
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $nr=$_GET['kuris'];
         $rez = $cnct -> query('SELECT Nr, Pavadinimas, Data, Tipas, Organizatorius, Trukme, 
-        Reg_iki, Liko_vietu, Foto, Aprasymas FROM all_keliones');
+        Reg_iki, Liko_vietu, Foto, Aprasymas FROM visos_keliones');
         $kiek = $rez -> num_rows;
             for($i=1; $i<=$kiek; $i++){
                 $y2 = $rez -> fetch_assoc();
-                if($i==$nr) $act="active";
+                if($y2['Nr']==$nr)  $act="active";
                 else $act="";
                     echo '
                     <div class="carousel-item ' .$act.'">

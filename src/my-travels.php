@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/carousele.css">
 </head>
-
 <body>
 <?php 
 session_start();
@@ -23,7 +22,12 @@ $kiek = $rez -> num_rows;
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-10 blokas travelcards">
-            <?php include 'php/cards.inc.php' ?>
+            <?php 
+            echo
+            '<button class="btn btn-lg mt-2" type="submit" name="submit">
+            <a href="create-travel.php">
+            Sukurti kelionę </a> </button>';
+            include 'php/cards.inc.php' ?>
         </div>
     </div>  
         <footer class="my-5 pt-5 text-muted text-center text-small">

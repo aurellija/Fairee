@@ -2,7 +2,7 @@
     <div class="carousel-inner row w-250 mx-auto">
         <?php
             include 'db.inc.php';
-            $rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM all_keliones');
+            $rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM visos_keliones');
             $kiek = $rez -> num_rows;
                 if ($rez->num_rows > 0) {
                     $act="active";

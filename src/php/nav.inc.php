@@ -15,7 +15,7 @@
                         <a class="nav-link" href="travel-cards.php">Visos kelionės</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mytavels.php">Mano kelionės</a>
+                        <a class="nav-link" href="my-travels.php">Mano kelionės</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profile.php">Profilis</a>
