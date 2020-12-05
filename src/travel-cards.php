@@ -19,7 +19,6 @@ include_once 'php/nav.inc.php';
 $rez = $cnct -> query('SELECT Nr, Pavadinimas, Reg_iki, Liko_vietu, Foto FROM all_keliones');
 $kiek = $rez -> num_rows;
 ?>
-
     <div class="container">
         <div class="col blokas">
             <?php include 'php/cards.inc.php' ?>
