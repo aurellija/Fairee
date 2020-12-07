@@ -35,9 +35,15 @@
 
     <div class="container">
 
-        <div class="row">
-            <div class="col-md blokas ml-auto"> Apie </div>
-        </div>
+    <div class="row apie">
+      <div class="col-md-7">
+        <h2 class="apie-heading">Apie Fairee</h2>
+        <p class="lead tekstas">Tai sistema žmonėms, kurie nori turiningai praleisti laiką ir pažinti dar neatrastus Lietuvos kampelius žygių metu.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
             <p class="mb-1">&copy; Fairee</p>
