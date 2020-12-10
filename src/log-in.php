@@ -37,6 +37,7 @@ include 'php/log-in.inc.php';
               <div class="mb-3 tekstas">
                 <label for="email">Elektroninis paštas</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="vardas.pavarde@epastas.com" value=""
+                pattern="[a-z0-9!#$%&*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
                   required>
                 <div class="invalid-feedback">
                   Prašome įvesti tinkamą elektroninio pašto adresą.
