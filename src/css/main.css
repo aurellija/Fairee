@@ -139,6 +139,16 @@ html {
 	height: 33rem;
   }
   
+.apie-divider {
+	margin: 5rem 0; 
+  }
+  
+  .apie-heading {
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -.05rem;
+	font-family: 'Poppins', sans-serif;
+  }
 
 
 @media (min-width: 40em) {
