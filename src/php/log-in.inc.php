@@ -1,7 +1,5 @@
 <?php
 
-//ssession_start();
-
 if (isset($_POST['submit'])) {
 
 	include_once 'db.inc.php';
@@ -12,7 +10,7 @@ if (isset($_POST['submit'])) {
 	if (empty($email) || empty($pass)) {
 		header("Location: ../src/log-in.php?login=empty");
 		exit();
-    } 
+    }
     else {
 		$rez = "SELECT * FROM vartotojai WHERE Elpastas=?;";
 		$stmt = mysqli_stmt_init($cnct);
@@ -38,8 +36,11 @@ if (isset($_POST['submit'])) {
 					$_SESSION['Nr'] = $row['Nr'];
 					$_SESSION['fname'] = $row['Vardas'];
 					$_SESSION['lname'] = $row['Pavarde'];
+					$_SESSION['email'] = $row['Elpastas'];
+					$_SESSION['bdate'] = $row['G_data'];
+					$_SESSION['phone'] = $row['Telefonas'];
 				
-					header("Location: ../src/index.php");
+					header("Location: ../index.php");
 					exit();
 				}
             } 

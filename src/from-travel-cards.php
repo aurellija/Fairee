@@ -12,28 +12,30 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
+<body>
+
 <?php 
 session_start();
-include 'php/db.inc.php';
-include_once 'php/nav.inc.php'; 
+include_once 'php/nav.inc.php';
+
+if (isset($_SESSION['Nr'])) {
+    echo'
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-10 blokas">';
+                include 'php/carousel.inc.php';
+    echo' </div>
+        </div>
+    </div>';
+}
+else {
+    header("Location: ../index.php");
+}
 ?>
 
-<body>
-    <div class="container">
-        <div class="col blokas">
-            <?php include 'php/carousel.inc.php';?>
-        </div>
-        <a class="carousel-control-prev" href="#car">
-        <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#car">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-    </div>
-
-    <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
-    <script type="text/javascript" src="js/carousele2.js"></script>
+<script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+<script type="text/javascript" src="js/carousele2.js"></script>
 
 </body>
 

@@ -27,11 +27,11 @@ include 'php/sign-up.inc.php';
   <div class="container">
     <div class="row">
       <div class="col"></div>
-      <div class="col-md-8 blokas">
+      <div class="col-md-7 blokas">
         <h4 class="mb-3 py-3 my-3">Registracija</h4>
         <form class="needs-validation" action="sign-up.php" method="POST">
         <?php
-    
+           if (!isset($_SESSION['Nr'])) {
             if (isset($_GET['fname'])) $fname=$_GET['fname']; 
             else $fname="";
             echo
@@ -63,6 +63,7 @@ include 'php/sign-up.inc.php';
               <label for="email">Elektroninis paštas</label>
               <input type="email" class="form-control" id="email" name="email" 
               placeholder="pvz.: vardas.pavarde@gmail.com" value="'.$email.'"
+              pattern="[a-z0-9!#$%&*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
                 required>
               <div class="invalid-feedback">
                 Prašome įvesti tinkamą elektroninio pašto adresą.
@@ -73,7 +74,7 @@ include 'php/sign-up.inc.php';
             '<div class="mb-3 tekstas">
               <label for="password">Slaptažodis</label>
               <input type="password" class="form-control" id="password" name="pass" 
-              placeholder="Privalomi: bent 8 simboliai, didžioji raidė, skaičius" value="" 
+              placeholder="Privalomi: bent 8 simboliai, didžioji ir mažoji raidės, skaičius" value="" 
               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required>
               <div class="invalid-feedback">
                 Prašome įvesti slaptažodį.
@@ -82,7 +83,7 @@ include 'php/sign-up.inc.php';
             <div class="mb-3 tekstas">
               <label for="password_confirmation">Pakartokite slaptažodį</label>
               <input type="password" class="form-control" id="password_confirmation" name="rpass"
-              placeholder="Privalomi: bent 8 simboliai, didžioji raidė, skaičius" value="" 
+              placeholder="Pakartokite slaptažodį" value="" 
               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required>
               <div class="invalid-feedback">
                 Prašome pakartoti slaptažodį.
@@ -99,7 +100,10 @@ include 'php/sign-up.inc.php';
               <div class="invalid-feedback">
                 Prašome įvesti savo gimimo datą.
               </div>
-            </div>';
+            </div>';}
+          else {
+            header("Location: ../index.php");
+          }
 
         ?>
           <hr class="mb-4">
@@ -140,6 +144,14 @@ include 'php/sign-up.inc.php';
           echo "<h5>Neteisingas el. paštas</h5>";
           exit();
       }
+      else if ($check == "success"){
+        echo '
+          <div class="row justify-content-center mb-3">
+          <div class="col-md-7 blokas mt-3">
+          <h6>Sėkmingai užsiregistravote. Galite prisijungti <a href="log-in.php"> čia </a> </h6>
+          </div>
+          </div>';
+    }
   }
 ?>
 

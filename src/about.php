@@ -12,26 +12,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbaras">
-        <a class="navbar-brand" href="index.html"><img src="assets/fairee-logo.svg" width="60" height="60"
-                alt=""></a>
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Prisijungti</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">Apie</a>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
+<?php
+  session_start();
+  include_once 'php/nav.inc.php';
+?>
 
     <div class="container">
 

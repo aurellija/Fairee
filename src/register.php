@@ -13,34 +13,18 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbaras">
-    <a class="navbar-brand" href="../index.html"><img src="assets/fairee-logo.svg" alt=""></a>
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<?php 
+session_start();
+include_once 'php/nav.inc.php'; 
+?>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Kelionės</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mano kelionės</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profilis</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Atsijungti</a>
-        </li>
-      </ul>
-
-    </div>
-  </nav>
-
-  <div class="container blokas">
- <h4 class="mb-3 py-3 my-3">Registracija į kelionę</h4>
+<div class="container">
+  <div class="col-md blokas">
+  
+  <?php 
+  if (isset($_SESSION['Nr'])) {
+  echo'
+  <h4 class="mb-3 py-3 my-3">Registracija į kelionę</h4>
     <div class="row ml-auto">
       <div class="col-md-6 order-md-2 mb-4">
 			<div class="mb-3 tekstas">
@@ -62,17 +46,15 @@
         
       </div>
 	  
-
       <div class="col-md-6 order-md-1">
        
         <form >
 			
 		  <div class="mb-3 tekstas">
             <p>Kelionės pavadinimas</p>
-            
+  
           </div>
-		  
-		  
+
             <div class="mb-3 tekstas">
               <p>Organizatorius</p>
             </div>
@@ -91,6 +73,14 @@
 		  
         </form>
       </div>
+    </div>';
+  }
+  else {
+    header("Location: ../index.php");
+  };
+
+  ?>
+
     </div>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">

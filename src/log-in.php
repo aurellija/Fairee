@@ -25,10 +25,10 @@ include 'php/log-in.inc.php';
   <div class="container">
     <div class="row">
       <div class="col"></div>
-      <div class="col-md-8 blokas">
+      <div class="col-md-7 blokas">
       <?php
         if (isset($_SESSION['Nr'])) {
-        
+          header("Location: ../index.php");
         }
           else {
             echo
@@ -37,6 +37,7 @@ include 'php/log-in.inc.php';
               <div class="mb-3 tekstas">
                 <label for="email">Elektroninis paštas</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="vardas.pavarde@epastas.com" value=""
+                pattern="[a-z0-9!#$%&*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
                   required>
                 <div class="invalid-feedback">
                   Prašome įvesti tinkamą elektroninio pašto adresą.
@@ -80,11 +81,11 @@ include 'php/log-in.inc.php';
       elseif ($check == "error"){
         echo "<h5>error </h5>";
         exit();
-    }
-    elseif ($check == "sqlerror"){
-      echo "<h5>sql error </h5>";
-      exit();
-  }
+      }
+      elseif ($check == "sqlerror"){
+        echo "<h5>sql error </h5>";
+        exit();
+      }
       elseif ($check == "pass"){
         echo "<h5>Slaptažodis neteisingas</h5>";
         exit();
@@ -92,7 +93,7 @@ include 'php/log-in.inc.php';
       elseif ($check == "nouser"){
         echo "<h5> Nėra tokio el. pašto </h5>";
         exit();
-    }
+      }
   }
 ?>
 

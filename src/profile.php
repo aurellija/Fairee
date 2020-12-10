@@ -12,13 +12,24 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
+<style>
+  h5{
+    margin-top: 5px;
+    padding-left:25%;
+    color:white;
+}
+</style>
+
 <body>
 <?php 
 session_start();
-include_once 'php/nav.inc.php'; 
-?>
+include_once 'php/nav.inc.php';
+include_once 'php/profile.inc.php';
 
-  <div class="container blokas ml-auto mr-auto">
+if (isset($_SESSION['Nr'])) {
+
+echo
+  '<div class="container blokas ml-auto mr-auto">
 
     <div class="row ml-auto">
       <div class="col-md-4 order-md-2 mb-4">
@@ -31,55 +42,48 @@ include_once 'php/nav.inc.php';
 
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3 py-3 my-3">Profilis</h4>
-        <form class="needs-validation" novalidate>
+        <form action="profile.php" class="needs-validation" method="POST" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3 tekstas">
-              <label for="firstName">Vardas</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Prašome įvesti teisingą vardą.
-              </div>
+              <label for="firstName">Vardas: '.$_SESSION['fname'].'</label>
+              <input type="text" class="form-control" id="firstName" name="fname" placeholder="" 
+              value="'.$_SESSION['fname'].'" required>
+
             </div>
             <div class="col-md-6 mb-3 tekstas">
-              <label for="lastName">Pavardė</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Prašome įvesti teisingą pavardę.
-              </div>
-            </div>
-          </div>
-
-
-          <div class="mb-3 tekstas">
-            <label for="email">Elektroninis paštas</label>
-            <input type="email" class="form-control" id="email" placeholder="vardas.pavarde@epastas.com" value=""
-              required>
-            <div class="invalid-feedback">
-              Prašome įvesti tinkamą elektroninio pašto adresą.
+              <label for="lastName">Pavardė: '.$_SESSION['lname'].'</label>
+              <input type="text" class="form-control" id="lastName" placeholder=""
+              value="'.$_SESSION['lname'].'" name="lname" required>
             </div>
           </div>
 
           <div class="mb-3 tekstas">
-            <label for="address">Telefono numeris</label>
-            <input type="text" class="form-control" id="telephone" placeholder="+370 " required>
-            <div class="invalid-feedback">
-              Prašome įvesti telefono numerį.
-            </div>
+            <label for="email">Elektroninis paštas: '.$_SESSION['email'].'</label>
+            <input type="email" class="form-control" id="email" value="" name="email" required>
           </div>
+
           <div class="mb-3 tekstas">
-            <label for="birthDate">Gimimo data</label>
-            <input type="date" id="birthDate" class="form-control" placeholder="" value="" required>
-            <div class="invalid-feedback">
-              Prašome įvesti savo gimimo datą.
-            </div>
+            <label for="telephone">Telefono numeris: '.$_SESSION['phone'].'</label>
+            <input type="text" class="form-control" id="telephone" placeholder="+370 " 
+            name="phone" value="'.$_SESSION['phone'].'" required>
+          </div>
+
+          <div class="mb-3 tekstas">
+            <label for="birthDate">Gimimo data: '.$_SESSION['bdate'].'</label>
+            <input type="date" id="birthDate" class="form-control" placeholder="" 
+            value="'.$_SESSION['bdate'].'" name="bdate" required>
           </div>
 
           <hr class="mb-4">
-          <button class="btn btn-lg btn-block" type="submit">Išsaugoti</button>
+          <button class="btn btn-lg btn-block" type="submit" name="submit">Išsaugoti</button>
         </form>
       </div>
-    </div>
+    </div>';}
 
+    else {
+      header("Location: ../index.php");
+    }
+?>
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; Fairee</p>
       <ul class="list-inline">
