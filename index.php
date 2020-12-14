@@ -79,56 +79,29 @@
       </a>
   </div>
 </div>
-<?php
-if (isset($_SESSION['Nr'])) {
-  echo '
-  <div class="container blokas home">
-    <div class="row">
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img" src="src/assets/map.svg" width="140" height="140" >
-		<h2>Kelionės</h2>
-		<p><a class="btn" href="travel-cards.php" role="button">Plačiau &raquo;</a><p>
-      </div>
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img" src="src/assets/compass.svg" width="140" height="140" >
-		<h2>Mano kelionės</h2>
-		<p><a class="btn" href="my-travels.php" role="button">Plačiau &raquo;</a><p>
-      </div>
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img" src="src/assets/user.svg" width="140" height="140" >
-		<h2>Profilis</h2>
-		<p><a class="btn" href="profile.php" role="button">Plačiau &raquo;</a><p>
-      </div>
-    </div>
-    </div>';
-}
 
-else {
-  echo '
   <div class="container blokas home">
     <div class="row">
       <div class="col-lg-4">
         <img class="bd-placeholder-img" src="src/assets/map.svg" width="140" height="140" >
     <h2>Kelionės</h2>
     <h6>Dalyvauk ir rask naujų draugų</h6>
-		<p><a class="btn" href="travel-cards.php" role="button">Plačiau &raquo;</a><p>
+		<p><a class="btn" href="src/read-more.php?read=travels" role="button">Plačiau &raquo;</a><p>
       </div>
       <div class="col-lg-4">
         <img class="bd-placeholder-img" src="src/assets/compass.svg" width="140" height="140" >
     <h2>Mano kelionės</h2>
     <h6>Sukurk savo kelionę</h6>
-		<p><a class="btn" href="my-travels.php" role="button">Plačiau &raquo;</a><p>
+		<p><a class="btn" href="src/read-more.php?read=mytravels" role="button">Plačiau &raquo;</a><p>
       </div>
       <div class="col-lg-4">
         <img class="bd-placeholder-img" src="src/assets/user.svg" width="140" height="140" >
     <h2>Profilis</h2>
     <h6>Tvarkyk savo paskyrą</h6>
-		<p><a class="btn" href="profile.php" role="button">Plačiau &raquo;</a><p>
+		<p><a class="btn" href="src/read-more.php?read=profile" role="button">Plačiau &raquo;</a><p>
       </div>
     </div>
-    </div>';
-}
-?>
+    </div>
 
 		<footer class="container my-5 pt-5 text-muted text-center text-small">
             <p class="mb-1">&copy; Fairee</p>
