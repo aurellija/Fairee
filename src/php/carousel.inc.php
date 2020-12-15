@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-end">
-                                <button class="btn btn-md m-3 btn-block" type="submit" name="submit"><a href="register.php">Registruotis</a></button>
+                                <button class="btn btn-md m-3 btn-block" type="submit" name="submit"><a href="register.php?regnr='.$y2['Nr'].'">Registruotis</a></button>
                                 </div>
                             </div>
                             <div class="col">

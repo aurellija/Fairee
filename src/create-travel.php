@@ -45,6 +45,7 @@ include_once 'php/create-travel.inc.php';
             <option value="DVIR">
             <option value="BAID">
             <option value="ZYG">
+            <option value="LAZD">
             <option value="AUTOM">
           </datalist>
             <div class="invalid-feedback">

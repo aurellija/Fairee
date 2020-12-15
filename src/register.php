@@ -20,78 +20,114 @@ include_once 'php/nav.inc.php';
 
 <div class="container">
   <div class="col-md blokas">
-  
-  <?php 
+
+<?php
   if (isset($_SESSION['Nr'])) {
+   
+    if(isset($_GET['regnr'])) {
+    $regnr = $_GET['regnr'];
+   
+    include_once 'php/register-1.inc.php';
+    include 'php/db.inc.php';
+    
+    $rez = $cnct -> query("SELECT Pavadinimas, Data, Tipas, Tipas_id, Organizatorius, Trukme, Reg_iki, Foto FROM visos_keliones WHERE Nr=$regnr");
+    
+    $x = $rez -> fetch_assoc();
+
+    $tip = $x['Tipas_id'];
+    $truk = $x['Trukme'];
+    $kitas = $x['Reg_iki'];
+    
   echo'
-  <h4 class="mb-3 py-3 my-3">Registracija į kelionę</h4>
-    <div class="row ml-auto">
-      <div class="col-md-6 order-md-2 mb-4">
-			<div class="mb-3 tekstas">
-				<p>Kelionės data</p>
-            
-			 </div>
-			<div class="mb-3 tekstas">
-			  <p>Registracijos pabaigos data</p>
-            
-			 </div>
-			 
-			<div class="mb-3 tekstas">
-				<p>Kelionės aprašymas</p>
-			</div>
-			
-			<div class="mb-3 tekstas">
-				<p>Laisvos vietos</p>
-			</div>
-        
-      </div>
-	  
-      <div class="col-md-6 order-md-1">
-       
-        <form >
-			
-		  <div class="mb-3 tekstas">
-            <p>Kelionės pavadinimas</p>
-  
+    <h4 class="mb-3 py-3 my-3">Registracija į kelionę</h4>
+      <div class="row justify-content-between">
+        <div class="col-md-6 order-md-1 mb-4">
+          <div class="mb-3 tekstas">
+            <p>Pavadinimas: <strong>'.$x['Pavadinimas'].'</strong></p>
           </div>
+          <div class="mb-3 tekstas">
+            <p>Kelionės data: '.$x['Data'].'</p>
+          </div>
+          <div class="mb-3 tekstas">
+            <p>Kelionės trukmė: '.$x['Trukme'].'</p>
+          </div>
+          <div class="mb-3 tekstas">
+            <p>Kelionės tipas: '.$x['Tipas'].'</p>
+          </div>
+          <div class="mb-3 tekstas">
+            <p>Organizatorius: '.$x['Organizatorius'].'</p>
+          </div>
+        </div>
 
-            <div class="mb-3 tekstas">
-              <p>Organizatorius</p>
+        <div class="col-md-4 order-md-2 mb-4">
+      
+        <form action="register.php?regnr='.$regnr.'&kitas='.$kitas.'" class="needs-validation" method="POST">
+          <div class="mb-3 tekstas">
+            <label class="form-check-label" for="veg">Vegetaras:</label>
+            <div class="form-check" id="veg">
+            <input class="form-check-input" type="radio" name="veg" id="flexRadioDefault1" value="1" required>
+            <label class="form-check-label" for="flexRadioDefault1">
+              Taip
+            </label>
             </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="veg" id="flexRadioDefault2" value="0" required>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Ne
+              </label>
+            </div>
+          </div>';
 
-          <div class="mb-3 tekstas">
-            <p>Organizatoriaus elektroninis paštas</p>
-          </div>
+          if($truk > 1) {
+            echo ' <div class="mb-3 tekstas">
+            <label for="palap">Palapinės</label>
+              <input type="number" class="form-control" id="palap" name="palap" placeholder="" 
+              required>
+            </div>';
+          }
+          if ($tip=='DVIR') { 
+            $y = 'Dviračiai';
+            echo'
+            <div class="mb-3 tekstas">
+            <label for="dvir">'.$y.'</label>
+              <input type="number" class="form-control" id="dvir" name="dvir" placeholder="" 
+              required>
+            </div>';
 
-          <div class="mb-3 tekstas">
-            <p>Organizatoriaus telefono numeris</p>
-          </div>
-		  
-		  <div class="mb-3 tekstas form-group">
-				<p>Papildoma informacija:</p>
-		  </div>	  
-		  
+          }
+          else if ($tip=='LAZD') {
+            $y = 'Šiaurietiškų lazdų poros';
+            echo'
+            <div class="mb-3 tekstas">
+            <label for="lazd">'.$y.'</label>
+              <input type="number" class="form-control" id="lazd" name="lazd" placeholder="" 
+              required>
+            </div>';
+          }
+          echo'
+            <hr class="mb-4">
+            <button class="btn btn-lg btn-block" type="submit" name="reg1">Registruotis</button>
         </form>
       </div>
-    </div>';
+  </div>';
+    }
   }
   else {
     header("Location: ../index.php");
-  };
+  }; 
 
-  ?>
-
-    </div>
-
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-      <p class="mb-1">&copy; Fairee</p>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Privacy</a></li>
-        <li class="list-inline-item"><a href="#">Terms</a></li>
-        <li class="list-inline-item"><a href="#">Support</a></li>
-      </ul>
-    </footer>
+?>
   </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Fairee</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
   	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
