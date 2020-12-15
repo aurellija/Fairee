@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2020 m. Grd 05 d. 22:44
+-- Generation Time: 2020 m. Grd 15 d. 16:26
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -44,7 +44,9 @@ CREATE TABLE `registracija_1` (
 --
 
 INSERT INTO `registracija_1` (`Nr`, `Vartotojo_nr`, `Vartotojo_vardas`, `Keliones_nr`, `Vegetaras`, `Palapines`, `Dviraciai`, `Lazdu_poros`) VALUES
-(1, 3, 'Juozas', 1, 1, 2, 0, 0);
+(1, 3, 'Juozas', 1, 1, 2, 0, 0),
+(2, 26, 'Hana', 1, 0, 1, 0, 0),
+(6, 26, 'Hana', 4, 0, 2, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -95,7 +97,14 @@ INSERT INTO `vartotojai` (`Nr`, `Vardas`, `Pavarde`, `Elpastas`, `Slaptazodis`, 
 (26, 'Hana', 'Montanna', 'hana@montana.lt', '$2y$10$pqOYyn2GZpWxJ3d14oRSSu98qFLIaKGCv.dhwkFEOeIBjb4xEAh1O', '2006-03-24', '+37066655544', '', 0, NULL, NULL),
 (27, 'hey', 'hey', 'hey@hey.lt', '$2y$10$weYtpHuTTwTORV3Q7jTUTeRgAzVL8LwwMdOEfshgtZVU5KUmislB.', '2020-10-29', '', '', 0, NULL, NULL),
 (33, 'd', 'd', 'han@fs.lt', '$2y$10$053D4zhpxtqHJogwOp4Se.hGfX3FZXKNmwEHIN6alhBa5Mp1KLWwa', '2020-12-18', '', '', 0, NULL, NULL),
-(34, 'Ana', 'Banana', 'ana@banana.lt', '$2y$10$zIVkG7fxy1bMvcQ6LkRjXezVwi3X0ZonqFcCfJax5EbQWsLnKEwn.', '2020-12-18', '', '', 0, NULL, NULL);
+(34, 'Ana', 'Banana', 'ana@banana.lt', '$2y$10$zIVkG7fxy1bMvcQ6LkRjXezVwi3X0ZonqFcCfJax5EbQWsLnKEwn.', '2020-12-18', '', '', 0, NULL, NULL),
+(36, 'Jonas', 'Galvonas', 'jonas@galvonas.lt', '$2y$10$QwdOpg28mwBpQNmV6bti6OhXM5mtQKtbzGkI4bXNY0HxXOuKUaMqm', '2020-09-10', NULL, NULL, NULL, NULL, NULL),
+(37, 'Jonas', 'Galvonas', 'jonas@galvonas.lt', '$2y$10$Dy/M7pDxhb9doekoLijmC.v1ROPtrnDGsaF22d/kx0hHAChzDtYV6', '2020-09-10', NULL, NULL, NULL, NULL, NULL),
+(38, 'Jonas', 'Ga', 'ga@sda.lt', '$2y$10$MMr1/uGA5RZZqdmEd.6MHO4BvNh8yjkLxNx60SlodoBCgAQC2Q9T.', '2020-12-30', NULL, NULL, NULL, NULL, NULL),
+(39, 'Da', 'Da', 'dsd@dfs.lt', '$2y$10$v/EzLyamxw81kxcn3LRrbuvQzA3GeeSX.KkQoagnaFPKsW5MaB90W', '2020-12-10', NULL, NULL, NULL, NULL, NULL),
+(40, 'Anas', 'Bananas', 'ban@bana.lt', '$2y$10$cnFAL.Q.4tPBHsXflZfea.8MJunmWwzIP.ldH3un88VLZLdoHGTDy', '2020-12-10', NULL, NULL, NULL, NULL, NULL),
+(41, 'Anas', 'Bananas', 'ban@bana.lt', '$2y$10$ILOL5o7OErUrqv/0hFs6QeGctWcmK7CJkwPVGmolt7aI4ARccO6Ha', '2020-12-10', NULL, NULL, NULL, NULL, NULL),
+(42, 'Bana', 'Banana', 'bana@banana.lt', '$2y$10$F9p0gePbBqE6YEetv3ZdDOLX29qc1hA4HlU06zKAoHtSEeTE0c/Nm', '2020-12-19', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -123,11 +132,11 @@ CREATE TABLE `visos_keliones` (
 --
 
 INSERT INTO `visos_keliones` (`Nr`, `Pavadinimas`, `Organizatorius`, `Data`, `Trukme`, `Reg_iki`, `Tipas`, `Tipas_id`, `Liko_vietu`, `Foto`, `Aprasymas`, `Foto_failas`) VALUES
-(1, 'Badare Šventosios upe', 'Dalius Makalius', '2021-06-16', 3, '2021-06-02', 'baidarių žygis', '', 10, 'https://baidaresvilniuje.lt/wp-content/uploads/2014/03/PlaukimasBaidaremisNerimi.jpg', 'Plaukimas 10 km. Šventosios upe iki Upninkų. Šią plaukimo trasa pasitiks du tiltai, pradedam plaukti ties pirmu, o antrasis tiltas leidžia žinoti, kad įveikėme 10 km. Kempingas ir „Old style homestead“ stiliaus sodyba yra apie 1 km. žemiau Upninkų tilto kairiajame Šventosios krante bus matomas medinis tiltas iš vandes, prie kurio finišuojame. Norintys nakvoti palapinėse apsistoja pušų terasoje. Norintys miegoti lovose su patalyne ir turėti Old style, apsistoja – sodyboje.\r\nAutentiška, rastinė sodyba talpina 20 žmonių, turi geriamą labai skanų vandenį iš šulinio, lauko bio tuoletą, tiklinį, futbolo vartus, pavėsinę, stalus poilsiui. Dar siūlo ramų miegą hamake, maudynes upėje ir plaukimus baidarėmis ir plaustais, pirtį.\r\nMaistas gaminamas ant laužo. Plovas, charčio ir kitokie patiekalai jus nustebins labai labai.', ''),
-(2, 'Dviračiais po Nidą', 'Valius Pedalius', '2021-04-16', 2, '2021-04-01', 'dviračių žygis', '', 15, 'https://i1.alfi.lt/22058/21/81.jpg', 'Dviračiais plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
-(3, 'Penktadienis prie Žaliųjų ežerų', 'Vytas Kazlauskas', '2021-02-01', 1, '2021-01-14', 'Pėsčiųjų žygis', '', 9, 'https://madeinvilnius.lt/wp-content/uploads/2018/07/37487901_2157474904280827_7228908504424120320_o.jpg', 'Kojomis eisime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
-(4, 'Miško keliais', 'Dalius Makalius', '2021-02-18', 5, '2021-02-01', 'pėsčiųjų', '', 5, 'https://g2.dcdn.lt/images/pix/bunkeris-karkleje-72293042.jpg', 'Baidarėmis plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
-(5, 'Išvyka į Tatrus', 'Jonas Galvonas', '2021-07-13', 7, '2021-07-01', 'Kalnų žygis', '', 20, 'https://cdn.getyourguide.com/img/tour/5bc5d24b5edf4.jpeg/146.jpg', 'Tatrais plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
+(1, 'Badare Šventosios upe', 'Dalius Makalius', '2021-06-16', 3, '2021-06-02', 'baidarių žygis', 'BAID', 10, 'https://baidaresvilniuje.lt/wp-content/uploads/2014/03/PlaukimasBaidaremisNerimi.jpg', 'Plaukimas 10 km. Šventosios upe iki Upninkų. Šią plaukimo trasa pasitiks du tiltai, pradedam plaukti ties pirmu, o antrasis tiltas leidžia žinoti, kad įveikėme 10 km. Kempingas ir „Old style homestead“ stiliaus sodyba yra apie 1 km. žemiau Upninkų tilto kairiajame Šventosios krante bus matomas medinis tiltas iš vandes, prie kurio finišuojame. Norintys nakvoti palapinėse apsistoja pušų terasoje. Norintys miegoti lovose su patalyne ir turėti Old style, apsistoja – sodyboje.\r\nAutentiška, rastinė sodyba talpina 20 žmonių, turi geriamą labai skanų vandenį iš šulinio, lauko bio tuoletą, tiklinį, futbolo vartus, pavėsinę, stalus poilsiui. Dar siūlo ramų miegą hamake, maudynes upėje ir plaukimus baidarėmis ir plaustais, pirtį.\r\nMaistas gaminamas ant laužo. Plovas, charčio ir kitokie patiekalai jus nustebins labai labai.', ''),
+(2, 'Dviračiais po Nidą', 'Valius Pedalius', '2021-04-16', 2, '2021-04-01', 'dviračių žygis', 'DVIR', 15, 'https://i1.alfi.lt/22058/21/81.jpg', 'Dviračiais plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
+(3, 'Penktadienis prie Žaliųjų ežerų', 'Vytas Kazlauskas', '2021-02-01', 1, '2021-01-14', 'Pėsčiųjų žygis', 'ZYG', 9, 'https://madeinvilnius.lt/wp-content/uploads/2018/07/37487901_2157474904280827_7228908504424120320_o.jpg', 'Kojomis eisime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
+(4, 'Mišku šiaurietiškomis lazdomis', 'Dalius Makalius', '2021-02-18', 5, '2021-02-01', 'pėsčiųjų', 'LAZD', 5, 'https://g2.dcdn.lt/images/pix/bunkeris-karkleje-72293042.jpg', 'Baidarėmis plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
+(5, 'Išvyka į Tatrus', 'Jonas Galvonas', '2021-07-13', 7, '2021-07-01', 'Kalnų žygis', 'ZYG', 20, 'https://cdn.getyourguide.com/img/tour/5bc5d24b5edf4.jpeg/146.jpg', 'Tatrais plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
 (11, 'Kelionė automobiliais į Rygą', 'Hana Montana', '2021-02-20', 4, '2020-12-26', 'Faina bus', 'BAID', 4, 'https://s2.15min.lt/images/photos/2015/07/23/original/latvijos-sostine-ryga-55b0c6e59ae77.jpg', 'Linksma', '');
 
 --
@@ -171,7 +180,7 @@ ALTER TABLE `visos_keliones`
 -- AUTO_INCREMENT for table `registracija_1`
 --
 ALTER TABLE `registracija_1`
-  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `registracija_2`
@@ -183,7 +192,7 @@ ALTER TABLE `registracija_2`
 -- AUTO_INCREMENT for table `vartotojai`
 --
 ALTER TABLE `vartotojai`
-  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `visos_keliones`
