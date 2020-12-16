@@ -25,7 +25,7 @@ include_once 'php/nav.inc.php';
             '<button class="btn btn-lg mt-2" type="submit" name="submit">
             <a href="create-travel.php">
             Sukurti kelionę </a> </button>';
-            include 'php/cards.inc.php' ?>
+            include 'php/my-cards.inc.php' ?>
         </div>
     </div>  
         <footer class="my-5 pt-5 text-muted text-center text-small">

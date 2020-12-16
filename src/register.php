@@ -59,7 +59,7 @@ include_once 'php/nav.inc.php';
           </div>
         </div>
 
-        <div class="col-md-4 order-md-2 mb-4">
+        <div class="col-md-5 order-md-2 mb-4">
       
         <form action="register.php?regnr='.$regnr.'&kitas='.$kitas.'" class="needs-validation" method="POST">
           <div class="mb-3 tekstas">
@@ -80,26 +80,16 @@ include_once 'php/nav.inc.php';
 
           if($truk > 1) {
             echo ' <div class="mb-3 tekstas">
-            <label for="palap">Palapinės</label>
-              <input type="number" class="form-control" id="palap" name="palap" placeholder="" 
+            <label for="palap">Palapinių vietų suma</label>
+              <input type="number" class="form-control" id="palap" name="palap" placeholder="pvz. jei 1 dvivietė ir 1 trivietė, rašykite 5"
               required>
             </div>';
           }
-          if ($tip=='DVIR') { 
-            $y = 'Dviračiai';
-            echo'
-            <div class="mb-3 tekstas">
-            <label for="dvir">'.$y.'</label>
-              <input type="number" class="form-control" id="dvir" name="dvir" placeholder="" 
-              required>
-            </div>';
 
-          }
           else if ($tip=='LAZD') {
-            $y = 'Šiaurietiškų lazdų poros';
             echo'
             <div class="mb-3 tekstas">
-            <label for="lazd">'.$y.'</label>
+            <label for="lazd">Šiaurietiškų lazdų poros</label>
               <input type="number" class="form-control" id="lazd" name="lazd" placeholder="" 
               required>
             </div>';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2020 m. Grd 15 d. 16:26
+-- Generation Time: 2020 m. Grd 16 d. 23:43
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -46,7 +46,9 @@ CREATE TABLE `registracija_1` (
 INSERT INTO `registracija_1` (`Nr`, `Vartotojo_nr`, `Vartotojo_vardas`, `Keliones_nr`, `Vegetaras`, `Palapines`, `Dviraciai`, `Lazdu_poros`) VALUES
 (1, 3, 'Juozas', 1, 1, 2, 0, 0),
 (2, 26, 'Hana', 1, 0, 1, 0, 0),
-(6, 26, 'Hana', 4, 0, 2, 0, 2);
+(6, 26, 'Hana', 4, 0, 2, 0, 2),
+(7, 45, 'Jonas', 5, 1, 3, 0, 0),
+(8, 45, 'Jonas', 1, 0, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -55,15 +57,23 @@ INSERT INTO `registracija_1` (`Nr`, `Vartotojo_nr`, `Vartotojo_vardas`, `Kelione
 --
 
 CREATE TABLE `registracija_2` (
-  `Nr` int(4) NOT NULL,
-  `Reg_nr` int(5) NOT NULL,
-  `Vartotojo_nr` int(5) NOT NULL,
-  `Keliones_nr` int(4) NOT NULL,
-  `Palapines` int(2) DEFAULT NULL,
-  `Dviraciai` int(2) DEFAULT NULL,
-  `Lazdos` int(2) DEFAULT NULL,
-  `Manta_eur` int(2) NOT NULL
+  `Nr` int(11) NOT NULL,
+  `Vartotojo_Nr` int(11) NOT NULL,
+  `Keliones_Nr` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Sukurta duomenų kopija lentelei `registracija_2`
+--
+
+INSERT INTO `registracija_2` (`Nr`, `Vartotojo_Nr`, `Keliones_Nr`) VALUES
+(1, 26, 4),
+(2, 26, 4),
+(3, 26, 4),
+(4, 26, 4),
+(5, 26, 4),
+(6, 26, 4),
+(7, 26, 4);
 
 -- --------------------------------------------------------
 
@@ -98,13 +108,7 @@ INSERT INTO `vartotojai` (`Nr`, `Vardas`, `Pavarde`, `Elpastas`, `Slaptazodis`, 
 (27, 'hey', 'hey', 'hey@hey.lt', '$2y$10$weYtpHuTTwTORV3Q7jTUTeRgAzVL8LwwMdOEfshgtZVU5KUmislB.', '2020-10-29', '', '', 0, NULL, NULL),
 (33, 'd', 'd', 'han@fs.lt', '$2y$10$053D4zhpxtqHJogwOp4Se.hGfX3FZXKNmwEHIN6alhBa5Mp1KLWwa', '2020-12-18', '', '', 0, NULL, NULL),
 (34, 'Ana', 'Banana', 'ana@banana.lt', '$2y$10$zIVkG7fxy1bMvcQ6LkRjXezVwi3X0ZonqFcCfJax5EbQWsLnKEwn.', '2020-12-18', '', '', 0, NULL, NULL),
-(36, 'Jonas', 'Galvonas', 'jonas@galvonas.lt', '$2y$10$QwdOpg28mwBpQNmV6bti6OhXM5mtQKtbzGkI4bXNY0HxXOuKUaMqm', '2020-09-10', NULL, NULL, NULL, NULL, NULL),
-(37, 'Jonas', 'Galvonas', 'jonas@galvonas.lt', '$2y$10$Dy/M7pDxhb9doekoLijmC.v1ROPtrnDGsaF22d/kx0hHAChzDtYV6', '2020-09-10', NULL, NULL, NULL, NULL, NULL),
-(38, 'Jonas', 'Ga', 'ga@sda.lt', '$2y$10$MMr1/uGA5RZZqdmEd.6MHO4BvNh8yjkLxNx60SlodoBCgAQC2Q9T.', '2020-12-30', NULL, NULL, NULL, NULL, NULL),
-(39, 'Da', 'Da', 'dsd@dfs.lt', '$2y$10$v/EzLyamxw81kxcn3LRrbuvQzA3GeeSX.KkQoagnaFPKsW5MaB90W', '2020-12-10', NULL, NULL, NULL, NULL, NULL),
-(40, 'Anas', 'Bananas', 'ban@bana.lt', '$2y$10$cnFAL.Q.4tPBHsXflZfea.8MJunmWwzIP.ldH3un88VLZLdoHGTDy', '2020-12-10', NULL, NULL, NULL, NULL, NULL),
-(41, 'Anas', 'Bananas', 'ban@bana.lt', '$2y$10$ILOL5o7OErUrqv/0hFs6QeGctWcmK7CJkwPVGmolt7aI4ARccO6Ha', '2020-12-10', NULL, NULL, NULL, NULL, NULL),
-(42, 'Bana', 'Banana', 'bana@banana.lt', '$2y$10$F9p0gePbBqE6YEetv3ZdDOLX29qc1hA4HlU06zKAoHtSEeTE0c/Nm', '2020-12-19', NULL, NULL, NULL, NULL, NULL);
+(45, 'Jonas', 'Galvonas', 'jonas@galvonas.lt', '$2y$10$WFmGnyVWu0SIMbaYYD1gYefDmof3qcwEUMm5H9PNW7AU5eqCs0QVe', '1987-02-02', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -137,7 +141,7 @@ INSERT INTO `visos_keliones` (`Nr`, `Pavadinimas`, `Organizatorius`, `Data`, `Tr
 (3, 'Penktadienis prie Žaliųjų ežerų', 'Vytas Kazlauskas', '2021-02-01', 1, '2021-01-14', 'Pėsčiųjų žygis', 'ZYG', 9, 'https://madeinvilnius.lt/wp-content/uploads/2018/07/37487901_2157474904280827_7228908504424120320_o.jpg', 'Kojomis eisime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
 (4, 'Mišku šiaurietiškomis lazdomis', 'Dalius Makalius', '2021-02-18', 5, '2021-02-01', 'pėsčiųjų', 'LAZD', 5, 'https://g2.dcdn.lt/images/pix/bunkeris-karkleje-72293042.jpg', 'Baidarėmis plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
 (5, 'Išvyka į Tatrus', 'Jonas Galvonas', '2021-07-13', 7, '2021-07-01', 'Kalnų žygis', 'ZYG', 20, 'https://cdn.getyourguide.com/img/tour/5bc5d24b5edf4.jpeg/146.jpg', 'Tatrais plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
-(11, 'Kelionė automobiliais į Rygą', 'Hana Montana', '2021-02-20', 4, '2020-12-26', 'Faina bus', 'BAID', 4, 'https://s2.15min.lt/images/photos/2015/07/23/original/latvijos-sostine-ryga-55b0c6e59ae77.jpg', 'Linksma', '');
+(11, 'Kelionė automobiliais į Rygą', 'Hana Montana', '2021-02-20', 4, '2020-12-26', 'Faina bus', 'AUT', 4, 'https://s2.15min.lt/images/photos/2015/07/23/original/latvijos-sostine-ryga-55b0c6e59ae77.jpg', 'Linksma', '');
 
 --
 -- Indexes for dumped tables
@@ -156,9 +160,7 @@ ALTER TABLE `registracija_1`
 --
 ALTER TABLE `registracija_2`
   ADD PRIMARY KEY (`Nr`),
-  ADD KEY `Reg_nr` (`Reg_nr`),
-  ADD KEY `Vartotojo_nr` (`Vartotojo_nr`),
-  ADD KEY `Keliones_nr` (`Keliones_nr`);
+  ADD KEY `Keliones_Nr` (`Keliones_Nr`);
 
 --
 -- Indexes for table `vartotojai`
@@ -180,19 +182,19 @@ ALTER TABLE `visos_keliones`
 -- AUTO_INCREMENT for table `registracija_1`
 --
 ALTER TABLE `registracija_1`
-  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `registracija_2`
 --
 ALTER TABLE `registracija_2`
-  MODIFY `Nr` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `Nr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `vartotojai`
 --
 ALTER TABLE `vartotojai`
-  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `visos_keliones`
@@ -215,9 +217,7 @@ ALTER TABLE `registracija_1`
 -- Apribojimai lentelei `registracija_2`
 --
 ALTER TABLE `registracija_2`
-  ADD CONSTRAINT `registracija_2_ibfk_1` FOREIGN KEY (`Reg_nr`) REFERENCES `registracija_1` (`Nr`),
-  ADD CONSTRAINT `registracija_2_ibfk_2` FOREIGN KEY (`Vartotojo_nr`) REFERENCES `vartotojai` (`Nr`),
-  ADD CONSTRAINT `registracija_2_ibfk_3` FOREIGN KEY (`Keliones_nr`) REFERENCES `visos_keliones` (`Nr`);
+  ADD CONSTRAINT `registracija_2_ibfk_1` FOREIGN KEY (`Keliones_Nr`) REFERENCES `visos_keliones` (`Nr`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
