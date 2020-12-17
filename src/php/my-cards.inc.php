@@ -25,7 +25,7 @@
                                         <p>Registruotis iki: '. $y["Reg_iki"].'<br>
                                         Liko vietų: '. $y["Liko_vietu"].'<br>
                                         <button class="btn btn-md mt-2 btn-block" type="submit" name="submit">
-                                        <a href="from-travel-cards.php?kuris='.$y["Nr"].'">Plačiau</a></button>
+                                        <a href="from-travel-cards.php?kuris='.$y["Nr"].'&block=yes">Plačiau</a></button>
                                         <button class="btn btn-md mt-2 btn-block" type="submit" name="">
                                         <a href="./register-2.php?regnr='.$y["Nr"].'">2 registracijos etapas</a></button>
                                         </p>

@@ -20,6 +20,7 @@ include_once 'php/nav.inc.php';
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-10 blokas travelcards">
+        <h4>Mano kelionės</h4>
             <?php 
             echo
             '<button class="btn btn-lg mt-2" type="submit" name="submit">

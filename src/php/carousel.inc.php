@@ -33,10 +33,14 @@
                                     <div class="col">
                                     <br><h6>'.$y2["Aprasymas"].'</h6> 
                                     </div>
-                                </div>
-                                <div class="row justify-content-end">
-                                <button class="btn btn-md m-3 btn-block" type="submit" name="submit"><a href="register.php?regnr='.$y2['Nr'].'">Registruotis</a></button>
-                                </div>
+                                </div>';
+                                if(!isset($_GET['block'])) {
+                                    echo '<div class="row justify-content-end">
+                                    <button class="btn btn-md m-3 btn-block" type="submit" name="submit">
+                                    <a href="register.php?regnr='.$y2['Nr'].'">Registruotis</a></button>
+                                    </div>';
+                                }
+                            echo'
                             </div>
                             <div class="col">
                                 <img src="'.$y2["Foto"].'" alt="Keliones nuotrauka" width="100%" height="100%">
