@@ -27,7 +27,6 @@ include_once 'php/nav.inc.php';
     if(isset($_GET['regnr'])) {
     $regnr = $_GET['regnr'];
    
-    include_once 'php/register-1.inc.php';
     include 'php/db.inc.php';
     
     $rez = $cnct -> query("SELECT Pavadinimas, Data, Tipas, Tipas_id, Organizatorius, Trukme, Reg_iki, Foto FROM visos_keliones WHERE Nr=$regnr");
@@ -37,6 +36,8 @@ include_once 'php/nav.inc.php';
     $tip = $x['Tipas_id'];
     $truk = $x['Trukme'];
     $kitas = $x['Reg_iki'];
+
+    include_once 'php/register-1.inc.php';
     
   echo'
     <h4 class="mb-3 py-3 my-3">Registracija į kelionę</h4>
