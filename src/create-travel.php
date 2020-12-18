@@ -11,7 +11,12 @@
   <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
-
+<style>
+  h5{
+    padding-left:39%;
+    color:white;
+}
+</style>
 <body>
 
 <?php
@@ -63,11 +68,6 @@ include_once 'php/create-travel.inc.php';
           <label for="link">Nuotraukos nuoroda</label>
           <input type="url" id="link" class="form-control" placeholder="Veikianti nuotraukos nuoroda" value="" 
           name="foto_url">
-        </div>
-
-        <div class="mb-3 tekstas custom-file">
-          <input type="file" class="custom-file-input" id="validatedCustomFile" name="foto_failas">
-          <label class="custom-file-label" for="validatedCustomFile">Pasirinkti failą...</label>
         </div>
 
         <hr class="mb-4">

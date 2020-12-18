@@ -20,10 +20,15 @@
     <div class="container blokas">
 
     <div class="row apie">
-      <div class="col-md">
+      <div class="col-md mb-3">
+      <br>
         <h2 class="apie-heading">Apie Fairee</h2>
+        <br>
         <p class="tekstas">Tai sistema žmonėms, kurie nori turiningai praleisti laiką 
         ir pažinti dar neatrastus Lietuvos kampelius žygių metu.</p>
+        <p class="tekstas">Pagrindinis sistemos išskirtinumas – kelionės mantos pasiskirstymas tarp keleivių.</p>
+      <img src="https://static01.nyt.com/images/2018/02/16/insider/packing_transparent-slide-SX8V/packing_transparent-slide-SX8V-jumbo-v2.jpg" width="500">
+      <br>
       </div>
     </div>
 

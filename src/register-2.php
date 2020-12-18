@@ -31,8 +31,10 @@ include_once 'php/nav.inc.php';
     include 'php/db.inc.php';
     
     $rez = $cnct -> query("SELECT Pavadinimas, Data, Tipas, Tipas_id, Organizatorius, Trukme, Reg_iki, Foto FROM visos_keliones WHERE Nr=$regnr");
+    $rez_2 = $cnct -> query("SELECT Vegetaras, Palapines, Lazdu_poros FROM registracija_1 WHERE Keliones_nr=$regnr");
    
     $x = $rez -> fetch_assoc();
+    $zmoniu = $rez_2 -> num_rows;
 
     $tip = $x['Tipas_id'];
     $truk = $x['Trukme'];
@@ -52,8 +54,12 @@ include_once 'php/nav.inc.php';
             <p>Kelionės data: '.$x['Data'].'</p>
         </div>
         <div class="row">
-            <p>Kelionės trukmė: '.$x['Trukme'].'</p>
+            <p>Kelionės trukmė: '.$x['Trukme'].' d.</p>
         </div>
+        <div class="row">
+          <p>Dalyvių kiekis: '.$zmoniu.'</p>
+        </div>
+        <hr>
         <div class="row">
             <div class="mb-3 tekstas">
             <p> <strong>Trūkstama manta</strong></p>
