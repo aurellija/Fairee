@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2020 m. Grd 16 d. 23:43
+-- Generation Time: 2020 m. Grd 21 d. 22:53
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -25,6 +25,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Sukurta duomenų struktūra lentelei `duokle`
+--
+
+CREATE TABLE `duokle` (
+  `Nr` int(11) NOT NULL,
+  `Kelione` int(11) NOT NULL,
+  `Kose` int(11) NOT NULL,
+  `Sviestas` int(11) NOT NULL,
+  `Mesa` int(11) NOT NULL,
+  `Pomidorai` int(11) NOT NULL,
+  `Agurkai` int(11) NOT NULL,
+  `Makaronai` int(11) NOT NULL,
+  `Vanduo` int(11) NOT NULL,
+  `Palapines` int(11) NOT NULL,
+  `Lazdu_pora` int(11) NOT NULL,
+  `Krosnele` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Sukurta duomenų kopija lentelei `duokle`
+--
+
+INSERT INTO `duokle` (`Nr`, `Kelione`, `Kose`, `Sviestas`, `Mesa`, `Pomidorai`, `Agurkai`, `Makaronai`, `Vanduo`, `Palapines`, `Lazdu_pora`, `Krosnele`) VALUES
+(1, 12, 100, 100, 100, 100, 10, 50, 20, 0, 0, 1),
+(2, 15, 50, 50, 20, 20, 20, 20, 200, 1, 0, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Sukurta duomenų struktūra lentelei `registracija_1`
 --
 
@@ -35,7 +64,6 @@ CREATE TABLE `registracija_1` (
   `Keliones_nr` int(4) NOT NULL,
   `Vegetaras` tinyint(1) NOT NULL,
   `Palapines` int(2) DEFAULT NULL,
-  `Dviraciai` int(2) DEFAULT NULL,
   `Lazdu_poros` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -43,12 +71,10 @@ CREATE TABLE `registracija_1` (
 -- Sukurta duomenų kopija lentelei `registracija_1`
 --
 
-INSERT INTO `registracija_1` (`Nr`, `Vartotojo_nr`, `Vartotojo_vardas`, `Keliones_nr`, `Vegetaras`, `Palapines`, `Dviraciai`, `Lazdu_poros`) VALUES
-(1, 3, 'Juozas', 1, 1, 2, 0, 0),
-(2, 26, 'Hana', 1, 0, 1, 0, 0),
-(6, 26, 'Hana', 4, 0, 2, 0, 2),
-(7, 45, 'Jonas', 5, 1, 3, 0, 0),
-(8, 45, 'Jonas', 1, 0, 1, 0, 0);
+INSERT INTO `registracija_1` (`Nr`, `Vartotojo_nr`, `Vartotojo_vardas`, `Keliones_nr`, `Vegetaras`, `Palapines`, `Lazdu_poros`) VALUES
+(16, 45, 'Jonas', 12, 1, 0, 0),
+(17, 47, 'Homer', 12, 0, 0, 0),
+(18, 47, 'Homer', 15, 1, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -67,13 +93,8 @@ CREATE TABLE `registracija_2` (
 --
 
 INSERT INTO `registracija_2` (`Nr`, `Vartotojo_Nr`, `Keliones_Nr`) VALUES
-(1, 26, 4),
-(2, 26, 4),
-(3, 26, 4),
-(4, 26, 4),
-(5, 26, 4),
-(6, 26, 4),
-(7, 26, 4);
+(16, 47, 12),
+(17, 47, 15);
 
 -- --------------------------------------------------------
 
@@ -100,15 +121,11 @@ CREATE TABLE `vartotojai` (
 --
 
 INSERT INTO `vartotojai` (`Nr`, `Vardas`, `Pavarde`, `Elpastas`, `Slaptazodis`, `G_data`, `Telefonas`, `Nuotrauka`, `Sudalyvauta`, `Sekanti_id`, `Praejusi_id`) VALUES
-(2, 'Aliona', 'Baliona', 'ale@inbox.lt', 'a62039e2dd75ceffa3b7', '1995-01-18', '', '', 0, NULL, NULL),
-(3, 'Juozas', 'Juozaitis', 'juozas@gmail.com', 'de9a990700a12ab76ba0', '1997-01-16', '', '', 0, NULL, NULL),
-(22, 'adad', 'ad', 'ads@sf.lt', '6057f13c496ecf7fd777', '2020-11-06', '', '', 0, NULL, NULL),
-(25, 'ha', 'a', 'a@sd.lt', '$2y$10$xl6bbS4Jdgj4wrAbFaqs9uqbwE6hvHLcxjft4gJ.MMakg2IJAWsoC', '2020-11-06', '', '', 0, NULL, NULL),
 (26, 'Hana', 'Montanna', 'hana@montana.lt', '$2y$10$pqOYyn2GZpWxJ3d14oRSSu98qFLIaKGCv.dhwkFEOeIBjb4xEAh1O', '2006-03-24', '+37066655544', '', 0, NULL, NULL),
-(27, 'hey', 'hey', 'hey@hey.lt', '$2y$10$weYtpHuTTwTORV3Q7jTUTeRgAzVL8LwwMdOEfshgtZVU5KUmislB.', '2020-10-29', '', '', 0, NULL, NULL),
-(33, 'd', 'd', 'han@fs.lt', '$2y$10$053D4zhpxtqHJogwOp4Se.hGfX3FZXKNmwEHIN6alhBa5Mp1KLWwa', '2020-12-18', '', '', 0, NULL, NULL),
-(34, 'Ana', 'Banana', 'ana@banana.lt', '$2y$10$zIVkG7fxy1bMvcQ6LkRjXezVwi3X0ZonqFcCfJax5EbQWsLnKEwn.', '2020-12-18', '', '', 0, NULL, NULL),
-(45, 'Jonas', 'Galvonas', 'jonas@galvonas.lt', '$2y$10$WFmGnyVWu0SIMbaYYD1gYefDmof3qcwEUMm5H9PNW7AU5eqCs0QVe', '1987-02-02', NULL, NULL, NULL, NULL, NULL);
+(45, 'Jonas', 'Galvonas', 'jonas@galvonas.lt', '$2y$10$WFmGnyVWu0SIMbaYYD1gYefDmof3qcwEUMm5H9PNW7AU5eqCs0QVe', '1987-02-02', NULL, NULL, NULL, NULL, NULL),
+(46, 'Marytė', 'Kristina', 'marry@christmas.lt', '$2y$10$m52DynWI/2wZy95Kl5P/QerGarnCJSlRINK48NXUmdnYGTF4Loztm', '2020-11-30', '', NULL, NULL, NULL, NULL),
+(47, 'Homer', 'Simpson', 'homer@simpson.lt', '$2y$10$8eHGQPmviEMrbfjAteEq/.YfmXHYqxaL44WyAxnffUxitvMlG.Jw2', '2020-12-18', NULL, NULL, NULL, NULL, NULL),
+(48, 'Liza', 'Simpson', 'liza@simpson.lt', '$2y$10$aaZjCBrpCWY4d0Bp/pD4HeA4UrVlrPRi6m6eowbN4pyeIQAkyPNrG', '2020-12-16', '+37064589789', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -141,11 +158,20 @@ INSERT INTO `visos_keliones` (`Nr`, `Pavadinimas`, `Organizatorius`, `Data`, `Tr
 (3, 'Penktadienis prie Žaliųjų ežerų', 'Vytas Kazlauskas', '2021-02-01', 1, '2021-01-14', 'Pėsčiųjų žygis', 'ZYG', 9, 'https://madeinvilnius.lt/wp-content/uploads/2018/07/37487901_2157474904280827_7228908504424120320_o.jpg', 'Kojomis eisime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
 (4, 'Mišku šiaurietiškomis lazdomis', 'Dalius Makalius', '2021-02-18', 5, '2021-02-01', 'pėsčiųjų', 'LAZD', 5, 'https://g2.dcdn.lt/images/pix/bunkeris-karkleje-72293042.jpg', 'Baidarėmis plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
 (5, 'Išvyka į Tatrus', 'Jonas Galvonas', '2021-07-13', 7, '2021-07-01', 'Kalnų žygis', 'ZYG', 20, 'https://cdn.getyourguide.com/img/tour/5bc5d24b5edf4.jpeg/146.jpg', 'Tatrais plauksime nuo vieno kranto iki kito. Bus labai įdomu.', ''),
-(11, 'Kelionė automobiliais į Rygą', 'Hana Montana', '2021-02-20', 4, '2020-12-26', 'Faina bus', 'AUT', 4, 'https://s2.15min.lt/images/photos/2015/07/23/original/latvijos-sostine-ryga-55b0c6e59ae77.jpg', 'Linksma', '');
+(11, 'Kelionė automobiliais į Rygą', 'Hana Montana', '2021-02-20', 4, '2020-12-26', 'Faina bus', 'AUT', 4, 'https://s2.15min.lt/images/photos/2015/07/23/original/latvijos-sostine-ryga-55b0c6e59ae77.jpg', 'Linksma', ''),
+(12, 'Verkių regioniniu parku', 'Hana Montanna', '2021-03-20', 1, '2021-01-01', 'Pėsčiųjų žygis', 'ZYG', 5, 'https://s2.15min.lt/images/photos/2018/05/11/original/ramiai-ciurlenantis-verkiu-parko-krioklys-5af581eac416c.jpg', 'Verkių regioninis parkas – regioninis parkas Vilniuje, dešiniajame Neries krante. Parko plotas – apie 2700 ha, miškai užima 77% teritorijos. Tai pasaulyje vienas didžiausių parkų miesto teritorijoje.', ''),
+(15, 'Žygis iki atodangos', 'Liza Simpson', '2021-01-03', 2, '2020-12-22', 'pėsčiųjų žygis', 'ZYG', 10, 'https://lietuvosgamta.lt/wp-content/uploads/2017/05/Puckoriu-atodanga-0026.jpg', 'Pūčkorių atodanga – geologinis paminklas, dešiniajame Vilnios krante. Tai ledynmečio atodanga – aukščiausia Lietuvoje, kurios aukštis 65 m, o plotis – 260 m, ir atsiveria maždaug 20 tūkst. metų senumo sluoksniai. Geologijos paminklu paskelbta 1974 m. Patenka į Pūčkorių kraštovaizdžio draustinį.', '');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `duokle`
+--
+ALTER TABLE `duokle`
+  ADD PRIMARY KEY (`Nr`),
+  ADD KEY `Kelione` (`Kelione`);
 
 --
 -- Indexes for table `registracija_1`
@@ -179,32 +205,44 @@ ALTER TABLE `visos_keliones`
 --
 
 --
+-- AUTO_INCREMENT for table `duokle`
+--
+ALTER TABLE `duokle`
+  MODIFY `Nr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `registracija_1`
 --
 ALTER TABLE `registracija_1`
-  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `registracija_2`
 --
 ALTER TABLE `registracija_2`
-  MODIFY `Nr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Nr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `vartotojai`
 --
 ALTER TABLE `vartotojai`
-  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `Nr` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `visos_keliones`
 --
 ALTER TABLE `visos_keliones`
-  MODIFY `Nr` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Nr` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Apribojimai eksportuotom lentelėm
 --
+
+--
+-- Apribojimai lentelei `duokle`
+--
+ALTER TABLE `duokle`
+  ADD CONSTRAINT `duokle_ibfk_1` FOREIGN KEY (`Kelione`) REFERENCES `registracija_1` (`Keliones_nr`);
 
 --
 -- Apribojimai lentelei `registracija_1`
