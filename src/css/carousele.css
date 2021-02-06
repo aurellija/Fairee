@@ -14,6 +14,7 @@
   .carousel-inner .carousel-item-next,
   .carousel-inner .carousel-item-prev {
     position: relative;
+    height: 480px;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
